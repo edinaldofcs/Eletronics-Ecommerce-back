@@ -1,4 +1,5 @@
 import { Body, ConflictException, Controller, Get, HttpStatus, Param, Post, Res } from '@nestjs/common';
+import { IsPublic } from 'src/auth/decorators/is-public.decorator';
 import { CategoryDTO } from './category.dto';
 import { CategoryService } from './category.service';
 
@@ -24,11 +25,13 @@ export class CategoryController {
     return this.categoryService.createMany();
   }
 
+  @IsPublic()
   @Get()
   async listAll() {    
     return await this.categoryService.listAll();
   }
 
+  @IsPublic()
   @Get(":name")
   async listOne(@Param("name") name:string, @Res() res) {    
     const category = await this.categoryService.listOne(name);

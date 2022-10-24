@@ -34,30 +34,7 @@ export class ProductService {
     });
     return;
   }
-
-  async listByCategory(category: string) {
-    const categoryExist = await this.prisma.category.findMany({
-      where: {
-        name: category,
-      },
-    });
-
-    if (!categoryExist) {
-      throw new Error('Esta categoria não existe');
-    }
-
-    const products = await this.prisma.category.findUnique({
-      where: {
-        id: category,
-      },
-      include: {
-        products: true,
-      },
-    });
-
-    return products;
-  }
-
+  
   async getOne(id: string) {
     const product = await this.prisma.product.findFirst({
       where: {

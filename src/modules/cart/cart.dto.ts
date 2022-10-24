@@ -1,6 +1,7 @@
 import { Decimal } from "@prisma/client/runtime";
 
 export type CartDTO = { 
+  id?: string;
   userId: string;
   productId: string;
   quantity?: number;  

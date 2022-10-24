@@ -1,11 +1,12 @@
+import { CartDTO } from "../cart/cart.dto";
+
 export type UserDTO = {
   email: string;
   password: string;
   name: string;
-  confirmpassword?: string;
   id?: string;
   purchases?: string[];
-  cart?: string[];
+  cart?: CartDTO[];
 };
 
 export type UserResponse = {
@@ -15,4 +16,4 @@ export type UserResponse = {
   token?: string;
   purchases?: string[];
   cart?: string[];
-} | {error: string}
+}
