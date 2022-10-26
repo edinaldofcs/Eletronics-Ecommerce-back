@@ -1,17 +1,14 @@
 import {
   BadRequestException,
   Body,
-  ConflictException,
   Controller,
   Get,
-  HttpCode,
   HttpStatus,
-  InternalServerErrorException,
-  Param,
   Post,
   Res,
   UnauthorizedException,
 } from '@nestjs/common';
+import { STATUS_CODES } from 'http';
 import { CurrentUser } from 'src/auth/decorators/current-user.decorator';
 import { IsPublic } from 'src/auth/decorators/is-public.decorator';
 import { UserDTO, UserResponse } from './user.dto';
@@ -30,31 +27,30 @@ export class UserController {
         .status(HttpStatus.BAD_REQUEST)
         .json(new BadRequestException('Email inválido'));
     }
-    
+
     return res.status(HttpStatus.CREATED).json();
   }
 
-  // @IsPublic()
-  // @Post('login')
-  // async login(@Body() data: UserDTO, @Res() res) {
-  //   const user = await this.userService.login(data);
-  //   if (!user) {
-  //     return res
-  //       .status(HttpStatus.UNAUTHORIZED)
-  //       .json(new UnauthorizedException('Usuário e/ou senha inválido(s)'));
-  //   }
-  //   return res.status(HttpStatus.OK).json(user);
-  // }
-
   @Get('updateUserCart')
   async updateUserCart(@CurrentUser() userInfo: UserDTO, @Res() res) {
-    const user = await this.userService.updateUserCart(userInfo);
+    const user = await this.userService.updateUserCart(userInfo.id);
 
     if (!user) {
       return res
         .status(HttpStatus.UNAUTHORIZED)
         .json(new UnauthorizedException('Credenciais inválidas'));
     }
+
     return res.status(HttpStatus.OK).json(user);
+  }
+
+  @Get('validatetoken')
+  async validateToken(@CurrentUser() userInfo: UserDTO, @Res() res) {
+
+    const user = await this.userService.findUserCart(userInfo.id)
+   console.log("teste");
+   
+    return res.status(HttpStatus.OK).json({ cart: user.cart });    
+    
   }
 }

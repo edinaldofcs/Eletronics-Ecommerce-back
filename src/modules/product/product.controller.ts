@@ -10,9 +10,10 @@ import { ProductService } from './product.service';
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
 
+  @IsPublic()
   @Post('createmany')
   async createMany() {
-    return
+    // return
     return this.productService.createMany();
   }
   

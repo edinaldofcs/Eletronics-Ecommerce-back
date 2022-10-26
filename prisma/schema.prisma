@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -25,10 +25,10 @@ model Product {
   price       Decimal
   quantity    Int
   slug        String
-  img         String
+  img         String        @db.Text
   sold        Int
   discount    Decimal
-  description String
+  description String        @db.Text
   category    Category?     @relation(fields: [categoryId], references: [id])
   categoryId  String?
   cart        Cart[]
@@ -40,7 +40,7 @@ model Product {
 model Category {
   id       String    @id @default(uuid())
   name     String    @unique
-  img      String    @default("")
+  img      String    @default("") @db.Text
   products Product[]
 }
 

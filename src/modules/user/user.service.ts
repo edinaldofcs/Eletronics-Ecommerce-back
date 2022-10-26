@@ -7,7 +7,7 @@ import * as bcrypt from 'bcrypt';
 export class UserService {
   constructor(private prisma: PrismaService) {}
 
-  async register(newData: UserDTO) {    
+  async register(newData: UserDTO) {
     const data = {
       ...newData,
       password: await bcrypt.hash(newData.password, 10),
@@ -29,10 +29,10 @@ export class UserService {
     return user;
   }
 
-  async updateUserCart(user: UserDTO) {   
+  async updateUserCart(id: string) {
     const findCarts = await this.prisma.user.findUnique({
       where: {
-        id: user.id,
+        id,
       },
       include: {
         cart: true,
@@ -84,10 +84,22 @@ export class UserService {
           product.id = cart.id;
         }
       }
-      let { id, name, price, quantity } = product;
+      let { id, name, quantity } = product;
       let img = JSON.parse(product.img)[0];
+      let price = product.price - product.price * product.discount;
       items.push({ id, name, price, quantity, img });
     }
     return items;
+  }
+
+  async findUserCart(id: string) {
+    return await this.prisma.user.findUnique({
+      where: {
+        id,
+      },
+      include:{
+        cart: true,
+      }
+    });
   }
 }

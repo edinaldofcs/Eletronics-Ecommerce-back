@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Param, Post, Put } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Delete, HttpStatus, Param, Post, Put, Res } from '@nestjs/common';
 import { CurrentUser } from 'src/auth/decorators/current-user.decorator';
 import { UserDTO } from '../user/user.dto';
 import { CartDTO } from './cart.dto';
@@ -30,5 +30,15 @@ export class CartController {
   async deleteAllCarts(@CurrentUser() user: UserDTO) {
     const { id } = user;
     return this.cartService.deleteAllCarts(id);
+  }
+
+  @Post("checkout/:token")
+  async createCheckoutSession(@CurrentUser() user: UserDTO, @Res() res, @Param('token') token: string){
+    const { id } = user;
+    const url = await this.cartService.createCheckoutSession(id, token)
+    if(url.status != "open"){
+      return res.status(HttpStatus.BAD_REQUEST).json(new BadRequestException('Não foi possível prosseguir com a sua solicitação.'));
+    }
+    return res.status(HttpStatus.OK).json({statusCode: 200, url: url.url});
   }
 }

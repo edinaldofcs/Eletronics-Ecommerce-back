@@ -1,12 +1,18 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/database/dbServices';
+import { ProductDTO } from '../product/product.dto';
 import { UserDTO } from '../user/user.dto';
-import { CartDTO } from './cart.dto';
+import { CartDTO, CheckoutDTO } from './cart.dto';
+import { InjectStripe } from 'nestjs-stripe';
+import Stripe from 'stripe';
 import { deleteCart } from './utils/deleteSingleCart';
 
 @Injectable()
 export class CartService {
-  constructor(private prisma: PrismaService) {}
+  constructor(
+    private prisma: PrismaService,
+    @InjectStripe() private readonly stripeClient: Stripe,
+  ) {}
 
   async addToCart(productId: string, user: UserDTO) {
     const CarExist = await this.prisma.cart.findFirst({
@@ -98,5 +104,49 @@ export class CartService {
         userId,
       },
     });
+  }
+
+  async createCheckoutSession(userId: string, token: string) {
+    const cart = await this.prisma.cart.findMany({
+      where: {
+        userId,
+      },
+    });
+
+    const products: CheckoutDTO[] = [];
+    for (const productCart of cart) {
+      const product = await this.prisma.product.findUnique({
+        where: {
+          id: productCart.productId,
+        },
+      });
+     
+      const newPrice = (
+        parseFloat(
+          (Number(product.price) * (1 - Number(product.discount))).toFixed(2),
+        ) * 100
+      ).toFixed(0);
+
+      const newProduct = {
+        price_data: {
+          currency: 'brl',
+          product_data: {
+            name: product.name,
+          },
+          unit_amount_decimal: newPrice,
+        },
+        quantity: Number(productCart.quantity),
+      };
+      products.push(newProduct);
+    }
+
+    const session = await this.stripeClient.checkout.sessions.create({
+      line_items: products,
+      mode: 'payment',
+      success_url: `${process.env.BASE_URL}/checkout/success?success=true&id=${userId}&token=${token}`,
+      cancel_url: `${process.env.BASE_URL}/checkout/canceled?success=false`,
+    });
+
+    return { status: session.status, url: session.url };
   }
 }

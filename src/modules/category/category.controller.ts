@@ -19,9 +19,10 @@ export class CategoryController {
     return res.status(HttpStatus.CREATED).json(category);
   }
 
+  @IsPublic()
   @Post("createmany")
   async createMany(@Res() res) {  
-    return res.status(HttpStatus.UNAUTHORIZED).json("Rota proibída");  
+    // return res.status(HttpStatus.UNAUTHORIZED).json("Rota proibída");  
     return this.categoryService.createMany();
   }
 

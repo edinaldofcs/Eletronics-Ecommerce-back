@@ -11,7 +11,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "Display de LED", "text":"tela com qualidade incomparável"}]',
-    categoryId: '809e3161-c712-4f0b-98b2-c88f5c566092',
+    categoryId: 'c98878b7-e69a-427b-948d-c8fa7aa9dfb3',
   },
   {
     name: 'Monitor Dell 23.8” S2421HN',
@@ -23,7 +23,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "Display de LED", "text":"tela com qualidade incomparável"}]',
-    categoryId: '809e3161-c712-4f0b-98b2-c88f5c566092',
+    categoryId: 'c98878b7-e69a-427b-948d-c8fa7aa9dfb3',
   },
   {
     name: 'Monitor Dell 27" P2722H',
@@ -35,7 +35,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "Display de LED", "text":"tela com qualidade incomparável"}]',
-    categoryId: '809e3161-c712-4f0b-98b2-c88f5c566092',
+    categoryId: 'c98878b7-e69a-427b-948d-c8fa7aa9dfb3',
   },
   ,
   {
@@ -48,7 +48,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "Display de LED", "text":"tela com qualidade incomparável"}]',
-    categoryId: '809e3161-c712-4f0b-98b2-c88f5c566092',
+    categoryId: 'c98878b7-e69a-427b-948d-c8fa7aa9dfb3',
   },
   {
     name: 'Monitor Dell 27" P2723QE',
@@ -60,7 +60,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "Display de LED", "text":"tela com qualidade incomparável"}]',
-    categoryId: '809e3161-c712-4f0b-98b2-c88f5c566092',
+    categoryId: 'c98878b7-e69a-427b-948d-c8fa7aa9dfb3',
   },
   {
     name: 'SSD 240 GB Kingston A400',
@@ -72,7 +72,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "Tecnologia de ponta", "text": "Este SDD garante alta performance"},{"title": "Velocidade", "text": "10 x mais rápido do que os HDs"}]',
-    categoryId: '22a70cc5-f192-45da-868c-80727b522f32',
+    categoryId: '83c268f4-cce7-4627-872a-ab776bb58a9d',
   },
   {
     name: 'Cooler FAN Rise Mode Wind W1',
@@ -84,7 +84,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "Características", "text": "Marca: Rise Mode"},{"title": "Especificações", "text": "Velocidade: 1500 Rpm"}]',
-    categoryId: '22a70cc5-f192-45da-868c-80727b522f32',
+    categoryId: '83c268f4-cce7-4627-872a-ab776bb58a9d',
   },
   {
     name: 'SSD 500 GB Kingston NV1, M.2 2280 NVMe',
@@ -96,7 +96,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "COMPUTAÇÃO DO DIA A DIA", "text": "O SSD Kingston NV1 é o SSD perfeito para quem deseja ter uma experiencia fluida para as atividades do dia a dia, estudar online e trabalhar. Graças à sua alta velocidade, o NV1 é a escolha inteligente para quem buscar ter o seu primeiro SSD NVMe por um preço acessível."},{"title": "Especificações", "EXCELENTE PARA CRIADORES DE CONTEÚDO": "O SSD Kingston NV1 NVMe possui velocidade de leitura de 2100MB/s e de gravação de 1700MB/s, fornecendo aos criadores de conteúdo rapidez na execução de arquivos pesados e na abertura de softwares. Processos de renderização por exemplo serão executados em alta velocidade, reduzindo o tempo de criação do arquivo final."}]',
-    categoryId: '22a70cc5-f192-45da-868c-80727b522f32',
+    categoryId: '83c268f4-cce7-4627-872a-ab776bb58a9d',
   },
   {
     name: 'SSD 240 GB PNY CS900',
@@ -108,7 +108,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "Características", "text": "Modelo: SSD7CS900-240-RB"},{"title": "Especificações", "text": "Capacidade - 240 GB"}]',
-    categoryId: '22a70cc5-f192-45da-868c-80727b522f32',
+    categoryId: '83c268f4-cce7-4627-872a-ab776bb58a9d',
   },
   {
     name: 'Placa-Mãe Asus Prime H510M-A',
@@ -120,7 +120,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "CONFIGURAÇÕES PERSONALIZADAS", "text": "Controles abrangentes formam a base da série ASUS Prime"},{"title": "Eficiência Energética", "text":"A Unidade de processamento de energia (EPU) otimiza automaticamente o consumo de energia e maximiza a economia de energia com o modo Ausente - uma configuração inteligente que cria um cenário extremo de economia de energia, desativando as portas I/O não utilizados."}]',
-    categoryId: '22a70cc5-f192-45da-868c-80727b522f32',
+    categoryId: '83c268f4-cce7-4627-872a-ab776bb58a9d',
   },
   {
     name: 'Microcomputador NTC PROPC I3',
@@ -132,7 +132,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "Características", "text": "O Computador NTC PRO PC 401 GA10G, vem equipado com processador Intel Core i3-10100 de 10º Geração com 4 Nucleos e 8 Threads de 3.6Ghz a 4.30Ghz no Modo Turbo,"}]',
-    categoryId: '8ae89431-4b25-4656-8bf6-dba549e43f85',
+    categoryId: '40bf9cab-0239-4738-90b4-e43c0b5e238e',
   },
   {
     name: 'Computador I7 9011',
@@ -144,7 +144,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "MARCA", "text": "NTC"}, {"title": "MODELO", "text": "PRICE 9011 AR"}]',
-    categoryId: '8ae89431-4b25-4656-8bf6-dba549e43f85',
+    categoryId: '40bf9cab-0239-4738-90b4-e43c0b5e238e',
   },
   {
     name: 'Computador VULCANO II 7173',
@@ -156,7 +156,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "PLACA DE VIDEO", "text": "Onboard – Intel® UHD Graphics 630"},{"title": "PROCESSADOR", "text": "Intel Core i3-10100 ( LGA 1200 / 3.6Ghz – 4.3Ghz / 6 MB Cache)"}]',
-    categoryId: '8ae89431-4b25-4656-8bf6-dba549e43f85',
+    categoryId: '40bf9cab-0239-4738-90b4-e43c0b5e238e',
   },
   {
     name: 'Computador GAMER VULCANO II 7151',
@@ -168,7 +168,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "MEMORIA RAM", "text": "Gamer 8GB DDR4 2666 MHZ (1X8GB)"}, {"title": "GABINETE", "text": "Gabinete Gamer CG-04RD – Odyssey Black"}]',
-    categoryId: '8ae89431-4b25-4656-8bf6-dba549e43f85',
+    categoryId: '40bf9cab-0239-4738-90b4-e43c0b5e238e',
   },
   {
     name: 'Computador GAMER VULCANO II 7155',
@@ -180,7 +180,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "FONTE", "text": "400W 80 Plus Bronze C/PFC Ativo"}, {"title": "PROCESSADOR", "text": "Intel Pentium G6400 (LGA 1200 / 4.0Ghz / 4 MB Cache L3)"}]',
-    categoryId: '8ae89431-4b25-4656-8bf6-dba549e43f85',
+    categoryId: '40bf9cab-0239-4738-90b4-e43c0b5e238e',
   },
   {
     name: 'Notebook Asus CZAM515DA',
@@ -192,7 +192,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "Sistema Operacional", "text": "Windows 10 Home (Pré-instalado no produto, não acompanha mídia)"}, {"title": "Modelo", "text": "X543UA-DM3459T"}]',
-    categoryId: '5e69c8d3-8c8a-4932-9c44-ca6bd10a83cc',
+    categoryId: '193da615-a165-4266-919e-6682585be77e',
   },
   {
     name: 'Notebook Positivo Motion Core i3',
@@ -204,7 +204,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "Sistema Operacional", "text": "Linux"}, {"title": "CPU", "text": "Processador: Intel CoreTM i3"}]',
-    categoryId: '5e69c8d3-8c8a-4932-9c44-ca6bd10a83cc',
+    categoryId: '193da615-a165-4266-919e-6682585be77e',
   },
   {
     name: 'Notebook Asus M515DA',
@@ -216,7 +216,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "Placa de Vídeo", "text": "Modelo: Radeon Vega 8"}, {"title": "Memória RAM", "text": "Tamanho: 8GB"}]',
-    categoryId: '5e69c8d3-8c8a-4932-9c44-ca6bd10a83cc',
+    categoryId: '193da615-a165-4266-919e-6682585be77e',
   },
   {
     name: 'Notebook Asus VivoBook',
@@ -228,7 +228,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "Processador", "text": "Intel Celeron Dual Core N4020 1,1GHz (4M Cache, até 2,8 GHz)"}, {"title": "Características", "text": "Notebook Celeron N4020 Asus X543MA 4GB RAM HD 500GB"}]',
-    categoryId: '5e69c8d3-8c8a-4932-9c44-ca6bd10a83cc',
+    categoryId: '193da615-a165-4266-919e-6682585be77e',
   },
   {
     name: 'Notebook Compaq Presario',
@@ -240,7 +240,7 @@ const products: ProductDTO[] = [
     discount: 0.1,
     description:
       '[{"title": "Memória", "text": "8GB DDR3 1.600MHz (Soldada)"}, {"title": "Processador", "text": "Intel Core i5 5257U"}]',
-    categoryId: '5e69c8d3-8c8a-4932-9c44-ca6bd10a83cc',
+    categoryId: '193da615-a165-4266-919e-6682585be77e',
   },
   {
     name: 'Bateria-Recarregável-9V',
@@ -251,7 +251,7 @@ const products: ProductDTO[] = [
     sold: 0,
     discount: 0.1,
     description: '[{"title": "Tipo", "text": "Recarregável"}, {"title": "APROVADAS PELO INMETRO", "text": "As Pilhas Elgin Energy são testadas periodicamente por laboratórios credenciados pelo INMETRO, para garantir a qualidade e conformidade com a resolução Conama 401"}]',
-    categoryId: 'a836087f-529a-4a06-9b91-13ccf1948c90',
+    categoryId: 'a36a3524-21a7-4946-9985-4e05fb26c4b5',
   },
   {
     name: 'Leitor de Cartão Universal',
@@ -262,7 +262,7 @@ const products: ProductDTO[] = [
     sold: 0,
     discount: 0.1,
     description: '[{"title": "COMPRIMENTO", "text": "27"}, {"title": "ALTURA (CM)", "text": "18.2"}]',
-    categoryId: 'a836087f-529a-4a06-9b91-13ccf1948c90',
+    categoryId: 'a36a3524-21a7-4946-9985-4e05fb26c4b5',
   },
   {
     name: 'Pilha Alcalina Elgin Aa',
@@ -273,7 +273,7 @@ const products: ProductDTO[] = [
     sold: 0,
     discount: 0.1,
     description: '[{"title": "PAPA-PILHAS", "text": "A Elgin faz parte do programa Abinee recebe Pilhas, que conta com diversos pontos de coleta no Brasil e destina as pilhas para reciclagem de forma ambientalmente correta. A Elgin disponibiliza papa-pilhas e postos de coleta em assistências"}, {"title": "MELHOR CUSTO X BENEFÍCIO", "text": "Em testes realizados pelo INMETRO foram avaliadas 11 marcas de pilhas do mercado. O custo por hora útil das pilhas Elgin Energy apresentou excelentes resultados"}]',
-    categoryId: 'a836087f-529a-4a06-9b91-13ccf1948c90',
+    categoryId: 'a36a3524-21a7-4946-9985-4e05fb26c4b5',
   },
   {
     name: 'Carregador De Pilha Duracell',
@@ -284,7 +284,7 @@ const products: ProductDTO[] = [
     sold: 0,
     discount: 0.1,
     description: '[{"title": "Pilhas inclusas", "text": "Modelo: AA (Pequena)"}, {"title": "Especificações", "text": "Já incluso 4 pilhas AA 2500mAh NiMH  "}]',
-    categoryId: 'a836087f-529a-4a06-9b91-13ccf1948c90',
+    categoryId: 'a36a3524-21a7-4946-9985-4e05fb26c4b5',
   },
   {
     name: 'Carregador de Pilhas Multi',
@@ -295,7 +295,7 @@ const products: ProductDTO[] = [
     sold: 0,
     discount: 0.1,
     description: '[{"title": "Especificações", "text": "Bateria: NI-MH/ NI-CD"}, {"title": "Características", "text": "Marca: Multilaser"}]',
-    categoryId: 'a836087f-529a-4a06-9b91-13ccf1948c90',
+    categoryId: 'a36a3524-21a7-4946-9985-4e05fb26c4b5',
   },
   {
     name: 'Cadeira Gamer Pctop Strike',
@@ -306,7 +306,7 @@ const products: ProductDTO[] = [
     sold: 0,
     discount: 0.1,
     description: '[{"title": "Especificações", "text": "Material: Couro sintético de PU"}, {"title": "Características", "text": "Marca: PCtop"}]',
-    categoryId: '694cada3-1875-4eb5-91e0-2a255d97bad2',
+    categoryId: 'e6a10546-eb2a-4421-b02b-bc919003642d',
   },
   {
     name: 'Mesa Gamer Husky',
@@ -317,7 +317,7 @@ const products: ProductDTO[] = [
     sold: 0,
     discount: 0.1,
     description: '[{"title": "Estabilidade e Estilo Gamer com RGB", "text": "A Mesa Gamer Husky Gaming Hailstorm 900 possui pés niveladores, que permite o ajuste para diferentes pisos e garante muito mais estabilidade para você. Gamer, para quem é gamer Além de todos esses benefícios, a mesa possui Luz padrão RGB para completar o estilo do seu setup. Mesa Gamer Husky Gaming Hailstorm 900: seu setup merece esse upgrade!"}, {"title": "Praticidade para seus momentos de lazer", "text": "Divirta-se sem precisar ficar se levantando: a Mesa Gamer Husky Gaming Hailstorm 900 possui suportes para headset e copo, o que também facilita na organização do seu setup. Mousepad do tamanho da mesa Sim, você leu certo! A mesa acompanha um mousepad do tamanho da área de trabalho! Você terá muito mais liberdade de movimentos com seu mouse e sem gastar nada a mais por isso"}]',
-    categoryId: '694cada3-1875-4eb5-91e0-2a255d97bad2',
+    categoryId: 'e6a10546-eb2a-4421-b02b-bc919003642d',
   },
   {
     name: 'Cadeira Gamer Mymax-Mx5',
@@ -328,7 +328,7 @@ const products: ProductDTO[] = [
     sold: 0,
     discount: 0.1,
     description: '[{"title": "Revestimento", "text": "Estofamento de tecido sintético PU."}, {"title": "Características", "text": "Marca: Mymax"}]',
-    categoryId: '694cada3-1875-4eb5-91e0-2a255d97bad2',
+    categoryId: 'e6a10546-eb2a-4421-b02b-bc919003642d',
   },
   {
     name: 'Cadeira Gamer Mx5',
@@ -339,7 +339,7 @@ const products: ProductDTO[] = [
     sold: 0,
     discount: 0.1,
     description: '[{"title": "Especificação Técnica", "text": "Superfície de Apoio: Espuma com densidade controlada - 35 Assento / 22 Encosto"}, {"title": "Características", "text": "Modelo: Cadeira Gamer MX5"}]',
-    categoryId: '694cada3-1875-4eb5-91e0-2a255d97bad2',
+    categoryId: 'e6a10546-eb2a-4421-b02b-bc919003642d',
   },
   {
     name: 'Cadeira Gamer MX6',
@@ -350,7 +350,7 @@ const products: ProductDTO[] = [
     sold: 0,
     discount: 0.1,
     description: '[{"title": "Superfície de Apoio", "text": "Espuma com densidade controlada - 35 Assento / 22 Encosto"}, {"title": "Características", "text": "Modelo: MX6"}]',
-    categoryId: '694cada3-1875-4eb5-91e0-2a255d97bad2',
+    categoryId: 'e6a10546-eb2a-4421-b02b-bc919003642d',
   }
 ];
 
