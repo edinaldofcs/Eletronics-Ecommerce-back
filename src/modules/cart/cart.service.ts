@@ -3,15 +3,15 @@ import { PrismaService } from 'src/database/dbServices';
 import { ProductDTO } from '../product/product.dto';
 import { UserDTO } from '../user/user.dto';
 import { CartDTO, CheckoutDTO } from './cart.dto';
-import { InjectStripe } from 'nestjs-stripe';
+// import { InjectStripe } from 'nestjs-stripe';
 import Stripe from 'stripe';
 import { deleteCart } from './utils/deleteSingleCart';
-
+const stripe = require("stripe")(process.env.STRIPE_KEY);
 @Injectable()
 export class CartService {
   constructor(
     private prisma: PrismaService,
-    @InjectStripe() private readonly stripeClient: Stripe,
+    // @InjectStripe() private readonly stripeClient: Stripe,
   ) {}
 
   async addToCart(productId: string, user: UserDTO) {
@@ -140,7 +140,7 @@ export class CartService {
       products.push(newProduct);
     }
 
-    const session = await this.stripeClient.checkout.sessions.create({
+    const session = await stripe.checkout.sessions.create({
       line_items: products,
       mode: 'payment',
       success_url: `${process.env.BASE_URL}/checkout/success?success=true&id=${userId}&token=${token}`,

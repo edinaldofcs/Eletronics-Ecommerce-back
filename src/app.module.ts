@@ -9,7 +9,7 @@ import { SaleModule } from './modules/sale/sale.module';
 import { AuthModule } from './auth/auth.module';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
-import { MyStripe } from './modules/stripe/stripe.module';
+// import { MyStripe } from './modules/stripe/stripe.module';
 
 @Module({
   imports: [
@@ -19,7 +19,7 @@ import { MyStripe } from './modules/stripe/stripe.module';
     CategoryModule,
     SaleModule,
     AuthModule,
-    MyStripe,
+    // MyStripe,
   ],
   controllers: [AppController],
   providers: [
