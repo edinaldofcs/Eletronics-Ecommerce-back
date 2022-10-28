@@ -10,7 +10,7 @@ const categories: CategoryDTO[] = [
     img:""
   },
   {
-    name: 'Games',
+    name: 'Games', 
     img:""
   },
   {
