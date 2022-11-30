@@ -1,7 +1,12 @@
 export type SaleDTO = {
   id: string;
-  user: string;
   userId: string;
-  date: string;
-  ProductSale: string[]
+  ProductSale?: string[];
+};
+
+export type ProductSale = {
+  id: string;
+  productId: string;
+  saleId: string;
+  quantity: number;
 };

@@ -2,52 +2,49 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/database/dbServices';
 import { CartProductDTO } from '../cart/cart.dto';
 import { UserDTO } from './user.dto';
-
+import * as bcrypt from 'bcrypt';
 @Injectable()
 export class UserService {
   constructor(private prisma: PrismaService) {}
 
-  async register(data: UserDTO) {
+  async register(newData: UserDTO) {
+    const data = {
+      ...newData,
+      password: await bcrypt.hash(newData.password, 10),
+    };
     const userEmailExist = await this.prisma.user.findFirst({
       where: {
         email: data.email,
       },
     });
 
-    if (userEmailExist)
-      return  
+    if (userEmailExist) return;
 
     const user = await this.prisma.user.create({
       data,
     });
 
     delete user.password;
-    //criar token
-    // user["token"] = "teste"  
 
     return user;
   }
 
-  async login(data: UserDTO) {
-    const user = await this.prisma.user.findFirst({
+  async updateUserCart(id: string) {
+    const findCarts = await this.prisma.user.findUnique({
       where: {
-        email: data.email,
+        id,
       },
       include: {
         cart: true,
       },
     });
+    return this.listUserCartItems(findCarts);
+  }
 
-    if (!user) return false;
-    if (user.password !== data.password) return false;
-
-    if (user.cart.length == 0) {
-      return user;
-    }
-
+  async listUserCartItems(user: UserDTO) {
     let id: { id: string }[] = [];
-    user.cart.forEach((element) => {
-      id.push({ id: element.productId });
+    user.cart.forEach((cart) => {
+      id.push({ id: cart.productId });
     });
 
     const products = await this.prisma.product.findMany({
@@ -56,14 +53,26 @@ export class UserService {
       },
     });
 
-    const items = this.addProduct(products, user);   
+    const items = this.addProduct(products, user);
 
-    delete user.password;
-    return { ...user, cart: { id: user.cart[0].id, items } };
+    return items;
   }
 
-  addProduct(products:any, user:any){
-    const items: CartProductDTO[] = []
+  async findByEmail(email: string) {
+    const user = await this.prisma.user.findFirst({
+      where: {
+        email: email,
+      },
+      include: {
+        cart: true,
+      },
+    });
+
+    return user;
+  }
+
+  addProduct(products: any, user: any) {
+    const items: CartProductDTO[] = [];
     for (const product of products) {
       for (const cart of user.cart) {
         if (
@@ -75,43 +84,22 @@ export class UserService {
           product.id = cart.id;
         }
       }
-      let { id, name, price, quantity } = product;
+      let { id, name, quantity } = product;
       let img = JSON.parse(product.img)[0];
+      let price = product.price - product.price * product.discount;
       items.push({ id, name, price, quantity, img });
     }
-    return items
+    return items;
   }
 
-  async updateUserCart(id: string) {
-    const user = await this.prisma.user.findUnique({
+  async findUserCart(id: string) {
+    return await this.prisma.user.findUnique({
       where: {
         id,
       },
-      include: {
+      include:{
         cart: true,
-      },
+      }
     });
-
-    if (!user) return;
-
-    if (user.cart.length == 0) {
-      return user;
-    }
-
-    let cartId: { id: string }[] = [];
-    user.cart.forEach((element) => {
-      cartId.push({ id: element.productId });
-    });
-
-    const products = await this.prisma.product.findMany({
-      where: {
-        OR: [...cartId],
-      },
-    });
-
-    const items = this.addProduct(products, user);  
-
-    delete user.password;
-    return { ...user, cart: { id: user.cart[0].id, items } };
   }
 }

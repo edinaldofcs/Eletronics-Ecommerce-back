@@ -6,7 +6,7 @@ import { CategoryDTO } from '../category/category.dto';
 @Injectable()
 export class CategoryService {
   constructor(private prisma: PrismaService) {}
-  async create(data: { name: string }) {
+  async create(data: CategoryDTO) {
     const categoryExist = await this.prisma.category.findFirst({
       where: {
         name: data.name,

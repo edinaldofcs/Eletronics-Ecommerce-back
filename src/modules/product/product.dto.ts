@@ -1,3 +1,5 @@
+import { Decimal } from "@prisma/client/runtime";
+
 export type ProductDTO = {
   name: string;
   price: number;
